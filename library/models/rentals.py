@@ -9,3 +9,8 @@ class Rentals(models.Model):
     book_id = fields.Many2one('library.book', string='Book')
     rental_date = fields.Date(string='Rental date')
     return_date = fields.Date(string='Return date')
+    email = fields.Char(string='Customer email', related='customer_id.email')
+    
+#    @api.onchange('customer_id','book_id')
+#    def _display_info(self):
+#        name = fields.Char(related='library.partner.name')
