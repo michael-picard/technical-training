@@ -1,4 +1,4 @@
-<odoo>
+ <odoo>
     <record id="teacher_ludo" model="res.partner">
         <field name="name">Ludovic Pintadaux</field>
         <field name="email">ludo@openacademy.org</field>
@@ -37,4 +37,24 @@
         <field name="course_id" ref="course_functionnal" />
         <field name="description">First session of odoo functionnal training</field>
     </record>
+     
+    <record model="ir.actions.act_window" id="open_academy_action">
+        <field name="name">Open Academy Courses</field>
+        <field name="res_model">openacademy.course</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+     
+      <record model="ir.actions.act_window" id="open_academy_session">
+        <field name="name">Open Academy Sessions</field>
+        <field name="res_model">openacademy.session</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Top menu item -->
+    <menuitem name="Open Academy" id="open_academy" sequence="40"/>
+    <!-- child items -->
+    <menuitem id="open_courses" name="Courses" parent="open_academy" sequence="2" action="openacademy.open_academy_action"/>
+     
+    <menuitem id="open_sessions" name="Sessions" parent="open_academy" sequence="3" action="openacademy.open_academy_session"/>
+        
 </odoo>

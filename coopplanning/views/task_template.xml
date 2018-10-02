@@ -4,14 +4,18 @@
         <field name="model">coopplanning.task.template</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="task_type_id" />
-                <field name="name" />
-                <field name="day_nb_id" />
-                <field name="start_time" />
-                <field name="end_time" />
-                <field name="duration" />
-                <field name="worker_nb" />
+                 <field name="task_type_id" />
             </tree>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="task_template_view_search">
+        <field name="name">Task Template Search</field>
+        <field name="model">coopplanning.task.template</field>
+        <field name="arch" type="xml">
+            <search>
+                 <field name="task_type_id" />
+            </search>
         </field>
     </record>
 
